@@ -1,0 +1,24 @@
+{
+  "name": "frutas-server",
+  "version": "1.0.2",
+  "description": "Frutas Project",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node .",
+    "build": "npx pkg ."
+  },
+  "keywords": [],
+  "author": "",
+  "pkg": {
+    "targets": [
+      "node16-win-x64",
+      "node16-linux-x64"
+    ],
+    "outputPath": "dist"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
