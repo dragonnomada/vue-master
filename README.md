@@ -24,7 +24,7 @@ LinkedIn: [/in/dragonnomada](https://www.linkedin.com/in/dragonnomada/)
 
 ## Introduction
 
-This is a master course about [Node JS](https://nodejs.org), [Express JS](https://expressjs.org) and [Vue JS](https://vuejs.org).
+This is a master course about [Node JS](https://nodejs.org), [Express JS](https://expressjs.com) and [Vue JS](https://vuejs.org).
 
 ## Goals
 

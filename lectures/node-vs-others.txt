@@ -1,0 +1,17 @@
+Node JS
+
++ Desarrollo Acelerado: Mejor Integración | Código Moderno
+- Alto Mantemiento
++ Escalabilidad
++ Distribuible: Microservicios | Servidores Distribuidos
+
+Otras Plataformas Robustas
+
+- Desarrollo Lento: Mejor Documentación | Código Estable
++ Bajo Mantenimiento
+- Escalabilidad
+- Distribuible: Monolíticos | Servidores Centralizados
+
+===
+Logic Concern
+Patrones de Diseño
