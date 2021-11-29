@@ -1,0 +1,27 @@
+# Vue References
+
+## Obfuscation
+
+* [https://www.npmjs.com/package/webpack-obfuscator](https://www.npmjs.com/package/webpack-obfuscator)
+
+* [https://cdmana.com/2021/02/20210225111039131a.html](https://cdmana.com/2021/02/20210225111039131a.html)
+
+## Web Components
+
+* [https://v3.vuejs.org/guide/web-components.html](https://v3.vuejs.org/guide/web-components.html#vue-and-web-components)
+
+## Async Components
+
+* [https://vueschool.io/articles/vuejs-tutorials/async-vuejs-components/](https://vueschool.io/articles/vuejs-tutorials/async-vuejs-components/)
+
+## Composition API
+
+* [https://v3.vuejs.org/guide/composition-api-introduction.html](https://v3.vuejs.org/guide/composition-api-introduction.html#introduction)
+
+## Otros
+
+* [https://www.packtpub.com/product/full-stack-web-development-with-vue-js-and-node/9781788831147](https://www.packtpub.com/product/full-stack-web-development-with-vue-js-and-node/9781788831147)
+* [https://blog.jscrambler.com/javascript-obfuscation-the-definitive-guide/](https://blog.jscrambler.com/javascript-obfuscation-the-definitive-guide/)
+* [https://dzone.com/articles/4-ways-to-boost-your-vuejs-app-with-webpack](https://dzone.com/articles/4-ways-to-boost-your-vuejs-app-with-webpack)
+* [https://medium.com/swlh/useful-vue-notification-components-thatll-save-you-time-a75812505cc4](https://medium.com/swlh/useful-vue-notification-components-thatll-save-you-time-a75812505cc4)
+* [https://github.com/julie-ng/nodejs-certificate-auth](https://github.com/julie-ng/nodejs-certificate-auth)

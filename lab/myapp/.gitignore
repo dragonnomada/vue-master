@@ -1,0 +1,5 @@
+# Ignore Node JS local modules
+node_modules/
+
+# Ignore local dependencies info
+package-lock.json
