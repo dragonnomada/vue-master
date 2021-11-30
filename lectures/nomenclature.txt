@@ -1,0 +1,9 @@
+PascalCase - MayúsculaCambioDePalabra
+
+LoginForm | ProductList | ListaProductos | TablaProductosOferta
+
+kebab-case - minúscula-cambio-de-palabra
+
+<LoginForm> | <login-form>
+<ProductList> | <product-list>
+<TablaProductosOferta> | <tabla-productos-oferta>

@@ -1,0 +1,15 @@
+src/assets
+-> Recursos estáticos de imágenes (directamente en el código)
+
+public/
+-> Recursos estáticos de audio/video/otros (no conviven con el código)
+* Uso limitado
+
+cdn//
+-> Recursos dinámicos (imágenes de productos, fotos de perfil, videos)
+* Datos dinámicos de servidor
+
+
+
+
+

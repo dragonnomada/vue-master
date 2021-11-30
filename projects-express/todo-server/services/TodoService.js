@@ -43,11 +43,11 @@ async function installTodosDemo(size = 10) {
 }
 
 async function install(withDemo = false, demoSize = 20) {
-    //await installTodoDB()
+    await installTodoDB()
     await useTodoDB()
-    // if (withDemo) {
-    //     await installTodosDemo(demoSize)
-    // }
+    if (withDemo) {
+        await installTodosDemo(demoSize)
+    }
     await installTodosTable()
 }
 
