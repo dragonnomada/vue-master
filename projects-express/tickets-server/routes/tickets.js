@@ -5,7 +5,7 @@ const TicketsService = require('../services/TicketsService')
 const router = express.Router()
 
 // GET /tickets
-router.get('/tickets', async (request, response) => {
+router.get('/', async (request, response) => {
     const tickets = await TicketsService.getTickets()
     response.send(tickets)
 })
@@ -14,7 +14,7 @@ router.get('/tickets', async (request, response) => {
 
 // PUT /tickets/add
 // { "email": "<example@domain.com>", "content": "<problem>" }
-router.put('/tickets/add', async (request, response) => {
+router.put('/add', async (request, response) => {
     // Creamos la variable email a partir de la clave "email" del objeto `request.body`
     // Creamos la variable content a partir de la clave "content" del objeto `request.body`
     const { email, content } = request.body
@@ -29,7 +29,7 @@ router.put('/tickets/add', async (request, response) => {
 //  -H 'ContentType: application/json'
 
 // GET /tickets/<ticketId>
-router.get('/tickets/:ticketId', async (request, response) => {
+router.get('/:ticketId', async (request, response) => {
     const { ticketId } = request.params
 
     const ticket = await TicketsService.getTicketById(Number(ticketId))

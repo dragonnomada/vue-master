@@ -1,0 +1,11 @@
+' DB: TicketSup
+CREATE DATABASE IF NOT EXISTS TicketSup;
+
+USE TicketSup;
+
+' TABLE: Tickets
+CREATE TABLE Tickets (
+  ticketId INT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL
+);
