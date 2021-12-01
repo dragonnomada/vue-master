@@ -41,6 +41,11 @@ router.get('/:ticketId', async (request, response) => {
         const ticket = await TicketsService.getTicketById(Number(ticketId))
         response.send(ticket)
     } catch (error) {
+        // 200 - ok
+        // 401 - Not authorized
+        // 404 - Not found
+        // 500 - Internal server error
+        // 501 - Not allowed
         response.status(500).send(`${error}`)
     }
 })
