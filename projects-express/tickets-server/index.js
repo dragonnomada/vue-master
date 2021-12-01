@@ -1,5 +1,6 @@
 // IMPORTS
 const express = require('express')
+const cors = require('cors')
 
 // IMPORT MAIN SERVICES 
 // const myService = require('./services/myService')
@@ -13,6 +14,7 @@ const ticketsRouter = require('./routes/tickets')
 const app = express()
 
 // CONFIGURE ROUTES
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

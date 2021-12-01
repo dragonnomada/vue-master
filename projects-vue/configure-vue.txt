@@ -1,0 +1,41 @@
+# CONFIGURE VUE
+
+> Create a project
+
+	npx vue create my-project
+
+> Install Vuex
+
+	npm install --save vuex@next
+
+> Config Stores
+
+```js
+// IMPORT VUE & VUEX
+import { createApp } from 'vue'
+import { createStore } from "vuex"
+
+// IMPORT STORES
+import MyStore from "./stores/MyStore"
+
+// IMPORT MAIN COMPONENT (App)
+import App from './App.vue'
+
+// DEFINE MAIN STORE (store)
+const store = createStore({
+    modules: {
+        myStore: MyStore
+    }
+})
+
+// CREATE VUE MAIN APP (app)
+const app = createApp(App)
+
+// USE MAIN STORE
+app.use(store)
+
+// MOUNT APP
+app.mount('#app')
+
+```
+
