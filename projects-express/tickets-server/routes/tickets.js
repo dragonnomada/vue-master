@@ -6,9 +6,14 @@ const router = express.Router()
 
 // GET /tickets
 router.get('/', async (request, response) => {
-    const tickets = await TicketsService.getTickets()
-    response.send(tickets)
+    try {
+        const tickets = await TicketsService.getTickets()
+        response.send(tickets)
+    } catch (error) {
+        response.status(500).send(`${error}`)
+    }
 })
+// curl http://localhost:5000/api/tickets
 
 // Destructing - const { x, y } = { x: 123, y: 456, z: 789 } // x = 123 | y = 456
 
@@ -32,9 +37,12 @@ router.put('/add', async (request, response) => {
 router.get('/:ticketId', async (request, response) => {
     const { ticketId } = request.params
 
-    const ticket = await TicketsService.getTicketById(Number(ticketId))
-
-    response.send(ticket)
+    try {
+        const ticket = await TicketsService.getTicketById(Number(ticketId))
+        response.send(ticket)
+    } catch (error) {
+        response.status(500).send(`${error}`)
+    }
 })
 // curl http://localhost:5000/api/tickets/123
 

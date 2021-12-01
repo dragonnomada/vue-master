@@ -13,6 +13,9 @@ const ticketsRouter = require('./routes/tickets')
 const app = express()
 
 // CONFIGURE ROUTES
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 // app.use('/api/myApi', myApiRouter)
 app.use('/api/tickets', ticketsRouter)
 

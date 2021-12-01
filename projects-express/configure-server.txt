@@ -35,6 +35,10 @@ const express = require('express')
 // MAIN APP
 const app = express()
 
+// CONFIGURE APP
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 // CONFIGURE ROUTES
 // app.use('/api/myApi', myApiRouter)
 // const myService = require('./services/myService')
