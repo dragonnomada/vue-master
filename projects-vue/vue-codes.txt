@@ -1,0 +1,76 @@
+## Components
+
+> View
+
+```html
+<template>
+  <div>
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+    <button @click="toggleLock()">Toogle Lock</button>
+  </div>
+</template>
+```
+
+> Component/Controller
+
+```js
+// if () {} // {} Block
+
+// const a = {} // {} Object
+
+// <my-component 
+//       @lock="doSomething($event)" 
+//       @unlock="doOtherThing($event)"
+//       @lock-limit="showAlert($event)">
+
+export default {
+  // template: <varible text>
+  emits: ['lock', 'unlock', 'lockLimit'],
+  // Physical State Component: { title, isLocked, lockCount }
+  data: () => ({ title: 'My Title', isLocked: false, lockCount: 0 }),
+  // Logical State Component: { subtitle }
+  computed: {
+    // Method: A Function into a Object
+    subtitle() {
+      // this -> Component/Intance
+      // this.title | this.isLocked | this.$store | this.$<vue plugins>
+      return new Date().toLocaleString() + this.isLocked ? 'Bloquedado' : 'Desbloqueado'
+    }
+  },
+  // Observer/Watcher State
+  watch: {
+    isLocked(newVal, oldVal) {
+      if (newVal) {
+        this.lockCount++
+        this.$emit('lock', this.lockCount)
+      } else {
+        this.$emit('unlock', this.lockCount)
+      }
+    },
+    lockCount(newVal, oldVal) {
+      if (newVal > 10) {
+        // TODO: Notify exceed locks
+        this.$emit('lockLimit', 'Limit exceeds')
+      }
+    }
+  },
+  // Method handles the events
+  methods: {
+    // <name>: <function variable>
+    // <name>: function(<params>) {}
+    // <name>(<params>)
+    toggleLock() {
+      this.isLock = !this.isLock
+    }
+  }
+}
+```
+
+
+
+
+
+
+
+
