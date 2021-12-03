@@ -1,6 +1,7 @@
 <!-- Start App: `npm run serve` -->
 
 <template>
+  <notifications />
   <MoviesApp msg="Welcome to Your Vue.js App"/>
 </template>
 

@@ -20,6 +20,8 @@ async function getMovies() {
 }
 
 async function getMovieById(movieId) {
+    await new Promise(resolve => setTimeout(resolve, 5000))
+
     const sql = 'select * from movies where movie_id = ? limit 1'
 
     const params = [movieId]

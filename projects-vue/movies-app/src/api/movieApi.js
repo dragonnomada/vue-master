@@ -1,3 +1,7 @@
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({ /* options */ });
+
 let baseUrl = 'http://localhost:5000'
 
 export async function init({ url }) {
@@ -23,6 +27,10 @@ export async function allMovies() {
 }
 
 export async function infoMovie(movieId) {
+    toaster.success('Yei', {
+        position: 'bottom-left'
+    })
+
     const response = await fetch(`${baseUrl}/api/movies/${movieId}`) // GET /:movieId
 
     if (response.status !== 200) {

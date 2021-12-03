@@ -1,3 +1,4 @@
+import { notify } from '@kyvg/vue3-notification'
 import movieApi from '../api/movieApi'
 
 export default {
@@ -34,6 +35,15 @@ export default {
     },
     // ACTIONS (dispatch)
     actions: {
+        async getInfoMovie(store, movieId) {
+            store.commit('setLock')
+
+            notify('Obtiendo datos de la película')
+            const movie = await movieApi.infoMovie(movieId)
+            notify('La película es ' + movie.title)
+
+            store.commit('setUnlock')
+        },
         async getAllMovies(store) {
             if (store.state.lock) throw Error('Store is locked')
 
