@@ -4,11 +4,15 @@ export default {
     // STATE (state)
     state: () => ({
         lock: false,
-        movies: []
+        movies: [],
     }),
     // GETTERS (getters)
     getters: {
         hasMovies: state => state.movies.length > 0,
+        directors: state => state.movies.map(movie => movie.director),
+        years: state => [... new Set(state.movies.map(movie => movie.realase_year))],
+        contries: state => [... new Set(state.movies.map(movie => movie.country))],
+        moviesInYear: state => state.movies.filter(movie => movie.realase_year === new Date().getFullYear())
     },
     // MUTATIONS (commit)
     mutations: {
