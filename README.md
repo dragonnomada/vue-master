@@ -53,8 +53,8 @@ This is a master course about [Node JS](https://nodejs.org), [Express JS](https:
 3. Working with SQL
 4. Getting started with API REST
 5. Building a Real World Application
+9. Getting Started with Vuex
 6. JS Code Obfusctation
 7. Webpack Optimization
 8. Client Certificate Authentication (mTLS) with Node JS
-9. Getting Started with Vuex
 10. Application Testing

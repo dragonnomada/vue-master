@@ -1,0 +1,71 @@
+Node/Express (Backend)
+
+Routes - Capa de Cliente (Frontend)
+
+* Establecer los recursos que podrán acceder los clientes (GET, POST, PUT, ...)
+* Adquirir los datos de petición/entrada de los clientes (PARAMS, QUERY, BODY, JSON)
+* Consumir los servicios con los parámetros adecuados y validados
+* Resolver la respuesta/salida con los resultados de los servicios
+
+Services - Capa de Negocio/Recursos
+
+* Procesamiento de datos (bases datos, reportes, cálculos, facturas, pagos, ...)
+* Seguridad y Valiciones
+* Servicios Ocultos
+
+Server - Capa de Administración
+
+* Levantar el servidor (PORT, HOST, PROTOCOL HTTP/S, CERTIFICATES, PLUGINS, SERVICES CONFIGURATIONS)
+* Establecer las Variables de Entorno y Ambientes de Producción (Sandbox, Dev, Test, Prod, ...)
+* Inicializar los servicios
+
+Vue/Vuex (Frontend)
+
+Components - Capa Visual/Usuario (Usuario)
+
+* Template/Plantilla Visual (<template>, template: `<html>`)
+* Enlace de Inyección Directa ({{ <physical/logical state> }})
+* Enlace de Vía Directa (<other-component v-bind:<prop>="<state>" >)
+* Enlace de Doble Vía | Enlace Modelo (<other-component v-model:<prop>="<state>" )
+* Eventos (<other-component v-on:<event>="<method>($event)" > | this.$emit('<event>', $event))
+* Estado Físico (data: () => ({ <physical state> }))
+* Estado Lógico (computed: { <logical state>() { return transform(this.<physical state>) } })
+* Observadores (watch: { <state>(newValue, oldValue) { ... } })
+* Métodos (methods: { <method>(<params>) { ... } })
+* Acceso a los Almacenes (this.$store | this.$store.state | this.$store.getters | this.$store.commit | this.$store.dispatch)
+
+Vuex Stores - Capa Datos/Lógica/Negocio [Administración]
+
+* Crear el Almacén Principal (import { createStore } from 'vuex' | const store = createStore({ modules: { MyStore, OtherStore, ... } }) )
+* Conectar el Almacén Principal al App (const app = createApp(App) | app.use(store) | this.$store)
+* Inicializar operaciones (mutaciones/acciones) en el Almacén Principal (store.dipatch('<initilize>', <config>))
+
+Vuex Stores - Capa Datos/Lógica/Negocio [Desarrollo]
+
+* Definir un nuevo Almacén (export default <store>)
+* Configurar el Almacén ({ <state>, <getters>, <mutations>, <actions> })
+* Estado Físico (state: () => ({ <physical state> }))
+* Estado Lógico (getters: { <logical state>(state) { return transform(state) } )
+* Modificar/Mutar el Estado (mutations: { <mutation>(state, <data/payload>, <context/store>) { update(state, <date>) } })
+* Operaciones/Acciones en el Almacén (actions: { <action>(<context/store>, <$event/data/payload>) { const result = await <api>(<data>); store.commit(<mutation>, <result>) } })
+
+APIs/Services - Capa Transaccional/Consumo (Backend)
+
+* Definir funciones/conjuntos (async function getSomething(<params>) | async function doOperation(<params>) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

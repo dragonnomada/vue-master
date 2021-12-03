@@ -33,6 +33,11 @@ aplicación estática con Vue.js | Directivas de vue.js | El enlace de datos | M
 formularios con Vue.js | Comunicarse con los servidores | Cargando contenido dinámico
 en la página de inicio | Notification components | vue-notifications | vue-easy-toast
 
+Parte 9. Presentando Vuex
+Aplicación tradicional de varias páginas web | Introducción a los SPA | SPA versus
+MPA | Una introducción a Vuex | Conceptos centrales de Vuex | Creando una aplicación
+Vuex simple | Instalación y uso de Vuex en una aplicación de películas
+
 Parte 6. Ofuscación de código JS
 Qué es ofuscación de código | Por qué ofuscar código JS | Técnicas de ofuscación de
 código | Métricas de ofuscación | Ofuscación & SDLC | Compatibilidad de código
@@ -49,11 +54,6 @@ Autenticación mediante certificados de cliente HTTPS | Certificados autorizados
 con Node.js | Cómo usar | Testing de un cliente válido | Testing de un cliente inválido
 | Certificados de servidor | Crear certificados de cliente | Server-signed y validación |
 self-signed e invalidación
-
-Parte 9. Presentando Vuex
-Aplicación tradicional de varias páginas web | Introducción a los SPA | SPA versus
-MPA | Una introducción a Vuex | Conceptos centrales de Vuex | Creando una aplicación
-Vuex simple | Instalación y uso de Vuex en una aplicación de películas
 
 Parte 10. Prueba de una aplicación
 Beneficios de las pruebas | Introducción a las pruebas unitarias | Una introducción a la

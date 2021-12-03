@@ -1,0 +1,7 @@
+npm init -y
+
+npm install --save express
+
+npm install --save cors
+
+npm install --save mysql2
