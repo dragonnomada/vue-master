@@ -5,8 +5,10 @@ const express = require('express')
 const cors = require('cors')
 
 // TODO: Import services
+const MovieService = require('./services/MovieService')
 
 // TODO: Import routes
+const movieRouter = require('./routes/movieRouter')
 
 const app = express()
 
@@ -16,8 +18,20 @@ app.use(express.json()) // accepts json as body request
 app.use(express.urlencoded({ extended: true })) // accepts html forms as body request
 
 // TODO: Config routes
+app.use('/api/movies', movieRouter)
 
 // TODO: Initilize services
+MovieService.init({
+    dbConfig: {
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'moviesdb'
+    }
+}).catch(error => {
+    console.error(error)
+    process.exit()
+})
 
 const server = http.createServer(app)
 

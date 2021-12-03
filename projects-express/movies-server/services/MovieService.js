@@ -68,6 +68,8 @@ async function getDirectorByMovieId(movieId) {
 
     const [first] = rows
 
+    if (!first) throw new Error('[CODE XX] Director Not Found')
+
     const director = await getDirectorById(first.director_id)
 
     return director

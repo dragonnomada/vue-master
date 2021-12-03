@@ -5,3 +5,12 @@ npm install --save express
 npm install --save cors
 
 npm install --save mysql2
+
+npm install
+
+1) node index.js
+2) node .
+3) npm run start
+4) npm start
+
+mysql -u root -p

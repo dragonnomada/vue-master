@@ -62,4 +62,10 @@ router.put('/add', async (request, response) => {
     }
 })
 
+// [REFERENCE] https://expressjs.com/en/guide/routing.html
+
+// request.params /movies/123/director                 -> { movieId: '123' }
+// request.query /movies/find?name=Start+Wars          -> { name: 'Start+Wars' }
+// request.body POST /movies/add [{ title: 'Nemo' }]   -> { title: 'Nemo' }
+
 module.exports = router
