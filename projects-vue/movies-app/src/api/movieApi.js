@@ -1,7 +1,11 @@
 let baseUrl = 'http://localhost:5000'
 
+export async function init({ url }) {
+    baseUrl = url
+}
+
 export async function allMovies() {
-    const response = await fetch(`${baseUrl}/api/movies`)
+    const response = await fetch(`${baseUrl}/api/movies/`) // GET /
 
     if (response.status !== 200) {
         const error = await response.text()
@@ -14,7 +18,7 @@ export async function allMovies() {
 }
 
 export async function infoMovie(movieId) {
-    const response = await fetch(`${baseUrl}/api/movies/${movieId}`)
+    const response = await fetch(`${baseUrl}/api/movies/${movieId}`) // GET /:movieId
 
     if (response.status !== 200) {
         const error = await response.text()
@@ -27,7 +31,7 @@ export async function infoMovie(movieId) {
 }
 
 export async function directorByMovie(movieId) {
-    const response = await fetch(`${baseUrl}/api/movies/${movieId}/director`)
+    const response = await fetch(`${baseUrl}/api/movies/${movieId}/director`) // GET /:movieId/director
 
     if (response.status !== 200) {
         const error = await response.text()
@@ -40,7 +44,7 @@ export async function directorByMovie(movieId) {
 }
 
 export async function addMovie(movie, directorId) {
-    const response = await fetch(`${baseUrl}/api/movies/add`, {
+    const response = await fetch(`${baseUrl}/api/movies/add`, { // PUT /add
         method: 'put',
         headers: {
             'Content-Type': 'application/json'

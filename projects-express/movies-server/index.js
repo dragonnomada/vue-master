@@ -18,7 +18,7 @@ app.use(express.json()) // accepts json as body request
 app.use(express.urlencoded({ extended: true })) // accepts html forms as body request
 
 // TODO: Config routes
-app.use('/api/movies', movieRouter)
+app.use('/api/movies', movieRouter) // http://localhost:5000 /api/movies [/ /add /:movieId /:movieId/director]
 
 // TODO: Initilize services
 MovieService.init({
