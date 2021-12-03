@@ -14,6 +14,11 @@ export async function allMovies() {
 
     const movies = await response.json()
 
+    for (let movie of movies) { // { movie_id, title, realase_year, ... }
+        const director = await movieApi.directorByMovie(movie.movie_id)
+        movie.director = director // { movie_id, title, realase_year, ..., director }
+    }
+
     return movies
 }
 
@@ -60,4 +65,12 @@ export async function addMovie(movie, directorId) {
     const result = await response.json()
 
     return result
+}
+
+export default {
+    init,
+    allMovies,
+    infoMovie,
+    directorByMovie,
+    addMovie
 }
