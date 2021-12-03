@@ -49,7 +49,7 @@ async function addMovie({ title, description, year, score, country, directorId }
 
     const movieId = insertId
 
-    addDirectorMovie(director.director_id, movieId)
+    await addDirectorMovie(director.director_id, movieId)
 
     const movie = await getMovieById(movieId)
 
@@ -57,6 +57,16 @@ async function addMovie({ title, description, year, score, country, directorId }
         movie,
         director
     }
+}
+
+async function addDirectorMovie(directorId, movieId) {
+    const sql = 'insert into director_movies (director_id, movie_id) values (?, ?)'
+
+    const params = [directorId, movieId]
+
+    const [result] = await connection.execute(sql, params)
+
+    return result
 }
 
 async function getDirectorByMovieId(movieId) {
