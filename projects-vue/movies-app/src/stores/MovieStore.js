@@ -1,6 +1,7 @@
 import movieApi from '../api/movieApi'
 
 export default {
+    namespaced: true, // El store sea independiente de los otros
     // STATE (state)
     state: () => ({
         lock: false,
