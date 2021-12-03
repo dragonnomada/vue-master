@@ -10,7 +10,12 @@ export default {
     // GETTERS (getters)
     getters: {
         hasMovies: state => state.movies.length > 0,
-        directors: state => state.movies.map(movie => movie.director),
+        directors: state => state.movies.map(movie => movie.director).reduce((directors, director) => {
+            if (!directors.some(other => other.director_id === director.director_id)) {
+                directors.push(director)
+            }
+            return directors
+        }, []),
         years: state => [... new Set(state.movies.map(movie => movie.realase_year))],
         contries: state => [... new Set(state.movies.map(movie => movie.country))],
         moviesInYear: state => state.movies.filter(movie => movie.realase_year === new Date().getFullYear())
