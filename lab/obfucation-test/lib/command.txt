@@ -1,0 +1,1 @@
+npx javascript-obfuscator demo.js --output demo.lib.js --rename-globals true --rename-properties true

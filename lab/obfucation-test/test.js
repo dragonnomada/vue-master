@@ -1,0 +1,21 @@
+const demo = require('./lib/demo.lib')
+
+console.log(demo.getCount())
+demo.increment()
+demo.increment()
+demo.increment()
+console.log(demo.getCount())
+demo.decrement()
+demo.decrement()
+console.log(demo.getCount())
+
+const { increment, decrement, getCount } = require('./lib/demo.lib')
+
+console.log(getCount())
+increment()
+increment()
+increment()
+console.log(getCount())
+decrement()
+decrement()
+console.log(getCount())

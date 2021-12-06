@@ -1,0 +1,16 @@
+¿Qué se puede atacar?
+
+-> Público:
+- Web App -> HTML/Javascript es público al navegador (App Insegura)
+	  -> Login -- Acceso temporal / token (N Peticiones | T Tiempo)
+
+-> Privado:
+- Web Services -> App -- Token (seguro/temporal)
+- IP | Domain -> Allow Control Access | Cert | Tokens
+
+Obfuscation
+-> Esconder el código (entre programadores)
+
+Compilación
+-> Web Services -> Binarios | Claves de Arranque | Archivos de Encido | Variables de entorno
+
