@@ -6,9 +6,9 @@ const LoginService = require('../services/LoginService')
 
 module.exports = async (request, response, next) => {
     // Obtener el token de la petición
-    const { username, token } = request.query
+    const { username, deviceId, token } = request.query
 
-    const isValid = await LoginService.verifyToken(username, token)
+    const isValid = await LoginService.verifyToken(username, deviceId, token)
 
     if (!isValid) {
         // Rechazamos la petición hacia cualquier /api/**
@@ -19,10 +19,11 @@ module.exports = async (request, response, next) => {
     // Podemos personalizar datos hacia la siguiente ruta
     request.auth = {
         username,
+        deviceId,
         token,
         isValid: true
     }
 
-    // Validamos la petición hacia la ruta /api/**
+    // Consumimos la petición hacia la ruta siguiente /api/**
     next()
 }

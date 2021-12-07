@@ -24,10 +24,11 @@ async function getPublicKey() {
     return publicKey
 }
 
-async function generateToken(username) {
+async function generateToken(username, deviceId) {
     const payload = {
         provider: 'Foo Inc - Security System',
         username,
+        deviceId,
         createAt: new Date()
     }
 
@@ -38,7 +39,7 @@ async function generateToken(username) {
     return token
 }
 
-async function verifyToken(username, token) {
+async function verifyToken(username, deviceId, token) {
     const publicKey = await getPublicKey()
 
     return new Promise((resolve, reject) => {
@@ -48,6 +49,10 @@ async function verifyToken(username, token) {
                 return
             }
             if (payload.username !== username) {
+                resolve(false)
+                return
+            }
+            if (payload.deviceId !== deviceId) {
                 resolve(false)
                 return
             }

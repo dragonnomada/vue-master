@@ -5,7 +5,7 @@ const LoginService = require('../services/LoginService')
 const router = express.Router()
 
 router.post('/', async (request, response) => {
-    const { username, password } = request.body || {}
+    const { username, password, deviceId } = request.body || {}
 
     const isValid = await LoginService.signIn(username, password)
 
@@ -14,7 +14,7 @@ router.post('/', async (request, response) => {
         return
     }
 
-    const token = await LoginService.generateToken(username)
+    const token = await LoginService.generateToken(username, deviceId)
 
     response.status(200).json({
         username,
