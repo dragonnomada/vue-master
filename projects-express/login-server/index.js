@@ -2,6 +2,8 @@
 // npm install --save dotenv
 // npm install --save express
 // npm install --save cors
+// node .
+// npm run start
 
 const path = require('path')
 
