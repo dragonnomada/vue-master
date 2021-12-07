@@ -1,0 +1,9 @@
+SEGURIDAD
+
+APP - SERVER (JWT -- Tokens seguros)
+
+/login <-- CREDENCIALES FÍSICAS (usuario/contraseña) --> CREDENCIALES LÓGICAS (token)
+
+/api/... <-- CREDENCIALES LÓGICAS (usuario/token) --> RECURSOS
+
+SERVER - SERVER (CERT -- SSL HTTPS)

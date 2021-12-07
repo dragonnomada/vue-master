@@ -25,6 +25,8 @@ async function getPublicKey() {
 }
 
 async function generateToken(username, deviceId) {
+    // TODO: Verificar si es un dispositivo válido en base de datos
+
     const payload = {
         provider: 'Foo Inc - Security System',
         username,

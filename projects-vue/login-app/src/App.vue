@@ -1,22 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <p>{{ url }}</p>
+  <div>
+    <Login v-if="!isLogin"/>
+    <HelloWorld v-if="isLogin"/>
+  </div>
 </template>
 
 <script>
+import Login from './components/Login.vue'
 import HelloWorld from './components/HelloWorld.vue'
-
-const url = process.env.VUE_APP_API_URL
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Login,
+    HelloWorld,
   },
   computed: {
-    url() {
-      return url
+    isLogin() {
+      return this.$store.getters['LoginStore/isLogin']
     }
   }
 }

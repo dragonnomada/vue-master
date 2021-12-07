@@ -18,6 +18,7 @@ router.post('/', async (request, response) => {
 
     response.status(200).json({
         username,
+        deviceId,
         token
     })
 })
