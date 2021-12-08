@@ -1,0 +1,45 @@
+## Master Server
+
+// Configuration
+
+const options = {
+	key: fs.readFileSync(path.join(process.cwd(), 'server_key.pem')),
+	cert: fs.readFileSync(path.join(process.cwd(), 'server_cert.pem')),
+	requestCert: true,
+	rejectUnauthorized: false,
+	ca: [
+		fs.readFileSync(path.join(process.cwd(), 'server_cert.pem'))
+	]
+};
+
+// Middleware
+
+const cert = req.socket.getPeerCertificate();
+
+if (req.client.authorized) {
+  res.send(`Valid Certificate ${cert.subject.CN} | Issued by ${cert.issuer.CN}`);
+} else if (cert.subject) {
+  res.status(403).send(`Invalid Certificate ${cert.subject.CN} | Issued by ${cert.issuer.CN}`);
+} else {
+  res.status(401).send(`Certificate not provided`);
+}
+
+## Client Server
+
+const certFile = path.resolve(process.cwd(), `${name}_cert.pem`);
+const keyFile = path.resolve(process.cwd(), `${name}_key.pem`);
+const agent = new https.Agent({
+  cert: fs.readFileSync(certFile),
+  key: fs.readFileSync(keyFile),
+  rejectUnauthorized: false
+}
+
+let opts = { httpsAgent: agent };
+
+axios.get(serverUrl, opts)
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.error(err.response.data);
+});

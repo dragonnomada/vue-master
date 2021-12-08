@@ -1,0 +1,3 @@
+master-server/certs/generate.cmd
+clientA-server/certs/generate.cmd
+clientB-server/certs/generate.cmd
