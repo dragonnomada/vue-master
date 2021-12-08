@@ -1,0 +1,9 @@
+/login <-- username / password --> token
+
+const token = jwt.sign(payload, secretKey, algorithm)
+
+---
+
+/api/** <-- token --> resources
+
+jwt.verify(token, publicKey, (error, payload) => {})
